@@ -1,0 +1,25 @@
+name: Progress Update
+description: Milestone update on your simulation
+title: "[Update] "
+labels: ["progress"]
+body:
+  - type: textarea
+    id: accomplished
+    attributes:
+      label: Accomplished
+      description: What have you finished?
+    validations:
+      required: true
+  - type: textarea
+    id: blockers
+    attributes:
+      label: Blockers
+      description: Anything stopping you?
+    validations:
+      required: false
+  - type: input
+    id: next_steps
+    attributes:
+      label: Next Steps
+    validations:
+      required: true

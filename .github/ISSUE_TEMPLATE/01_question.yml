@@ -1,0 +1,21 @@
+name: Ask a Question
+description: Ask a specific technical question to the mentors
+title: "[Q] "
+labels: ["question"]
+body:
+  - type: textarea
+    id: context
+    attributes:
+      label: Context
+      description: What are you trying to achieve?
+      placeholder: "I am trying to bind the service to the UI..."
+    validations:
+      required: true
+  - type: textarea
+    id: tried
+    attributes:
+      label: What did you try?
+      description: List steps you already attempted
+      placeholder: "Checked logs, searched SAP Community, tried binding..."
+    validations:
+      required: true

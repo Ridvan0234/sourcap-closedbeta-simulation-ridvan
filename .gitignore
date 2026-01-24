@@ -1,0 +1,14 @@
+# System
+.DS_Store
+Thumbs.db
+
+# Node
+node_modules/
+dist/
+.env
+
+# ABAP/SAP
+*.abapgit.xml
+.adt/
+.vscode/
+.idea/
