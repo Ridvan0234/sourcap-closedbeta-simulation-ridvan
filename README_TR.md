@@ -11,7 +11,7 @@ Bu repo, simülasyon göreviniz için başlangıç noktası ve talimatları içe
 
 ### 1. 📖 Fonksiyonel Dökümanı Okuyun
 İnşa etmeniz gereken her şey (tablolar, objeler, mantık) **Fonksiyonel Spesifikasyon Dökümanı** içinde tanımlanmıştır.
-👉 **[Fonksiyonel Dökümanı Oku (PDF)](./docs/Toffy_Functional_Spec.pdf)**
+👉 **[Fonksiyonel Dökümanı Oku (PDF)](./docs/Toffy_Functional_Spec_TR.pdf)**
 
 *Not: Bu döküman "Toffy Manufacturing" gereksinimlerini içerir.*
 
