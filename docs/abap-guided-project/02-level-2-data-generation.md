@@ -32,22 +32,32 @@ CLASS zcl_stock_generator IMPLEMENTATION.
 
     " 1. Create a Header
     DATA(lv_uuid) = cl_system_uuid=>create_uuid_x16_static( ).
+    
+    " Get timestamp for RAP admin fields
+    GET TIME STAMP FIELD DATA(lv_ts).
+
     DATA(ls_hdr) = VALUE ztf_stock_hdr(
         snapshot_uuid = lv_uuid
         plant         = '1000'
         snapshot_date = sy-datum
-        total_items   = 5
-        total_value   = '15000.00'
+        total_items   = 3
+        total_value   = '6200.00'
         currency      = 'EUR'
         comment_text  = 'Simulated Snapshot'
+        " Admin Fields
+        created_by            = sy-uname
+        created_at            = lv_ts
+        last_changed_by       = sy-uname
+        last_changed_at       = lv_ts
+        local_last_changed_at = lv_ts
     ).
     APPEND ls_hdr TO lt_hdr.
 
     " 2. Create Items (Simulate Material List)
     lt_itm = VALUE #(
-        ( snapshot_uuid = lv_uuid item_no = '000010' material_id = 'RM-001' material_desc = 'Raw Cocoa'   qty_on_hand = '100' reorder_point = '50'  uom = 'KG' risk_flag = 'OK'  item_value = '5000' )
-        ( snapshot_uuid = lv_uuid item_no = '000020' material_id = 'RM-002' material_desc = 'Sugar'       qty_on_hand = '20'  reorder_point = '100' uom = 'KG' risk_flag = 'LOW' item_value = '200'  )
-        ( snapshot_uuid = lv_uuid item_no = '000030' material_id = 'PM-001' material_desc = 'Foil Wrap'   qty_on_hand = '500' reorder_point = '200' uom = 'EA' risk_flag = 'OK'  item_value = '1000' )
+        ( snapshot_uuid = lv_uuid item_uuid = cl_system_uuid=>create_uuid_x16_static( ) material_id = 'RM-001' material_desc = 'Raw Cocoa'   qty_on_hand = '100.000' reorder_point = '50.000'  uom = 'KG' risk_flag = 'OK'  item_value = '5000.00' currency = 'EUR' )
+        ( snapshot_uuid = lv_uuid item_uuid = cl_system_uuid=>create_uuid_x16_static( ) material_id = 'RM-002' material_desc = 'Sugar'       qty_on_hand = '20.000'  reorder_point = '100.000' uom = 'KG' risk_flag = 'LOW' item_value = '200.00'  currency = 'EUR' )
+        ( snapshot_uuid = lv_uuid item_uuid = cl_system_uuid=>create_uuid_x16_static( ) material_id = 'PM-001' material_desc = 'Foil Wrap'   qty_on_hand = '500.000' reorder_point = '200.000' uom = 'EA' risk_flag = 'OK'  item_value = '1000.00' currency = 'EUR' )
     ).
 
     " 3. Insert into DB

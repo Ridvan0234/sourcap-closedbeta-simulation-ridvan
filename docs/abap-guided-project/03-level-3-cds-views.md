@@ -27,6 +27,18 @@ define view entity ZI_Stock_Header
   currency          as Currency,
   comment_text      as CommentText,
   
+  /* Admin Fields */
+  @Semantics.systemDateTime.createdAt: true
+  created_at            as CreatedAt,
+  @Semantics.user.createdBy: true
+  created_by            as CreatedBy,
+  @Semantics.systemDateTime.lastChangedAt: true
+  last_changed_at       as LastChangedAt,
+  @Semantics.user.lastChangedBy: true
+  last_changed_by       as LastChangedBy,
+  @Semantics.systemDateTime.localInstanceLastChangedAt: true
+  local_last_changed_at as LocalLastChangedAt,
+  
   _Items
 }
 ```
@@ -47,7 +59,7 @@ define view entity ZI_Stock_Item
     on $projection.SnapshotUuid = _Header.SnapshotUuid
 {
   key snapshot_uuid as SnapshotUuid,
-  key item_no       as ItemNo,
+  key item_uuid     as ItemUuid,
   material_id       as MaterialId,
   material_desc     as MaterialDesc,
   storage_loc       as StorageLoc,
@@ -59,8 +71,8 @@ define view entity ZI_Stock_Item
   risk_flag         as RiskFlag,
   @Semantics.amount.currencyCode: 'Currency'
   item_value        as ItemValue,
+  currency          as Currency,
   
-  _Header.Currency  as Currency, // Ad-hoc association for Amount/Currency link
   _Header
 }
 ```
@@ -122,8 +134,7 @@ define view entity ZC_Stock_Item
   as projection on ZI_Stock_Item
 {
   key SnapshotUuid,
-  @UI.lineItem: [ { position: 10 } ]
-  key ItemNo,
+  key ItemUuid,
   
   @UI.lineItem: [ { position: 20 } ]
   MaterialId,

@@ -14,7 +14,7 @@ In this level, we will set up the foundation of our application by creating the 
 For simplicity, we will use standard domains or built-in types in our table definitions. In a real project, you would create `ZDE_SNAPSHOT_ID`, `ZDE_PLANT`, etc.
 
 ## Step 3: Create Database Tables
-We need two tables: one for the Snapshot Header and one for the Items.
+We need two tables: one for the Snapshot Header and one for the Items. We will use modern ABAP types and include standard RAP administrative fields.
 
 ### 3.1 Header Table (`ZTF_STOCK_HDR`)
 1.  Right-click on your new package `ZTOFFY_STOCK` -> **New** -> **Other ABAP Repository Object** -> **Database Table**.
@@ -30,14 +30,22 @@ We need two tables: one for the Snapshot Header and one for the Items.
 @AbapCatalog.deliveryClass : #A
 @AbapCatalog.dataMaintenance : #RESTRICTED
 define table ztf_stock_hdr {
-  key client    : abap.clnt not null;
-  key snapshot_uuid : sysuuid_x16 not null;
-  plant         : werks_d;
-  snapshot_date : datum;
-  total_items   : int4;
-  total_value   : netwr;
-  currency      : waers;
-  comment_text  : abap.string(256);
+  key client            : abap.clnt not null;
+  key snapshot_uuid     : sysuuid_x16 not null;
+  plant                 : abap.char(4);
+  snapshot_date         : abap.dats; 
+  total_items           : abap.int4; 
+  @Semantics.amount.currencyCode : 'currency'
+  total_value           : abap.curr(15,2);
+  currency              : abap.cuky;
+  comment_text          : abap.string(256);
+  
+  -- Admin Fields
+  created_by            : abp_creation_user;
+  created_at            : abp_creation_tstmpl;
+  last_changed_by       : abp_lastchange_user;
+  last_changed_at       : abp_lastchange_tstmpl;
+  local_last_changed_at : abp_locinst_lastchange_tstmpl;
 }
 ```
 6.  **Activate** (Ctrl+F3).
@@ -58,15 +66,19 @@ define table ztf_stock_hdr {
 define table ztf_stock_itm {
   key client        : abap.clnt not null;
   key snapshot_uuid : sysuuid_x16 not null;
-  key item_no       : numc6 not null;
-  material_id       : matnr;
-  material_desc     : maktx;
-  storage_loc       : lgort_d;
-  qty_on_hand       : meng13;
-  uom               : meins;
-  reorder_point     : meng13;
-  risk_flag         : char3; // 'LOW' or 'OK'
-  item_value        : netwr;
+  key item_uuid     : sysuuid_x16 not null;
+  material_id       : abap.char(18);
+  material_desc     : abap.char(40);
+  storage_loc       : abap.char(4);
+  @Semantics.quantity.unitOfMeasure : 'uom'
+  qty_on_hand       : abap.quan(13,3);
+  uom               : abap.unit(3);
+  @Semantics.quantity.unitOfMeasure : 'uom'
+  reorder_point     : abap.quan(13,3);
+  risk_flag         : abap.char(3);
+  @Semantics.amount.currencyCode : 'currency'
+  item_value        : abap.curr(15,2);
+  currency          : abap.cuky;
 }
 ```
 6.  **Activate** (Ctrl+F3).
