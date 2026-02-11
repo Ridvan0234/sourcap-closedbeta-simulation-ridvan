@@ -55,9 +55,9 @@ CLASS zcl_stock_generator IMPLEMENTATION.
 
     " 2. Create Items (Simulate Material List)
     lt_itm = VALUE #(
-        ( snapshot_uuid = lv_uuid item_uuid = cl_system_uuid=>create_uuid_x16_static( ) material_id = 'RM-001' material_desc = 'Raw Cocoa'   qty_on_hand = '100.000' reorder_point = '50.000'  uom = 'KG' risk_flag = 'OK'  item_value = '5000.00' currency = 'EUR' )
-        ( snapshot_uuid = lv_uuid item_uuid = cl_system_uuid=>create_uuid_x16_static( ) material_id = 'RM-002' material_desc = 'Sugar'       qty_on_hand = '20.000'  reorder_point = '100.000' uom = 'KG' risk_flag = 'LOW' item_value = '200.00'  currency = 'EUR' )
-        ( snapshot_uuid = lv_uuid item_uuid = cl_system_uuid=>create_uuid_x16_static( ) material_id = 'PM-001' material_desc = 'Foil Wrap'   qty_on_hand = '500.000' reorder_point = '200.000' uom = 'EA' risk_flag = 'OK'  item_value = '1000.00' currency = 'EUR' )
+        ( snapshot_uuid = lv_uuid item_uuid = cl_system_uuid=>create_uuid_x16_static( ) material_id = 'RM-001' material_desc = 'Raw Cocoa'   qty_on_hand = '100.000' reorder_point = '50.000'  uom = 'KG' risk_flag = 'OK'  item_value = '5000.00' currency = 'EUR' created_by = sy-uname created_at = lv_ts last_changed_by = sy-uname last_changed_at = lv_ts local_last_changed_at = lv_ts )
+        ( snapshot_uuid = lv_uuid item_uuid = cl_system_uuid=>create_uuid_x16_static( ) material_id = 'RM-002' material_desc = 'Sugar'       qty_on_hand = '20.000'  reorder_point = '100.000' uom = 'KG' risk_flag = 'LOW' item_value = '200.00'  currency = 'EUR' created_by = sy-uname created_at = lv_ts last_changed_by = sy-uname last_changed_at = lv_ts local_last_changed_at = lv_ts )
+        ( snapshot_uuid = lv_uuid item_uuid = cl_system_uuid=>create_uuid_x16_static( ) material_id = 'PM-001' material_desc = 'Foil Wrap'   qty_on_hand = '500.000' reorder_point = '200.000' uom = 'EA' risk_flag = 'OK'  item_value = '1000.00' currency = 'EUR' created_by = sy-uname created_at = lv_ts last_changed_by = sy-uname last_changed_at = lv_ts local_last_changed_at = lv_ts )
     ).
 
     " 3. Insert into DB

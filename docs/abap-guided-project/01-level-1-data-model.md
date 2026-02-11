@@ -79,6 +79,13 @@ define table ztf_stock_itm {
   @Semantics.amount.currencyCode : 'currency'
   item_value        : abap.curr(15,2);
   currency          : abap.cuky;
+  
+  -- Admin Fields
+  created_by            : abp_creation_user;
+  created_at            : abp_creation_tstmpl;
+  last_changed_by       : abp_lastchange_user;
+  last_changed_at       : abp_lastchange_tstmpl;
+  local_last_changed_at : abp_locinst_lastchange_tstmpl;
 }
 ```
 6.  **Activate** (Ctrl+F3).

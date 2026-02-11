@@ -73,6 +73,18 @@ define view entity ZI_Stock_Item
   item_value        as ItemValue,
   currency          as Currency,
   
+  /* Admin Fields */
+  @Semantics.systemDateTime.createdAt: true
+  created_at            as CreatedAt,
+  @Semantics.user.createdBy: true
+  created_by            as CreatedBy,
+  @Semantics.systemDateTime.lastChangedAt: true
+  last_changed_at       as LastChangedAt,
+  @Semantics.user.lastChangedBy: true
+  last_changed_by       as LastChangedBy,
+  @Semantics.systemDateTime.localInstanceLastChangedAt: true
+  local_last_changed_at as LocalLastChangedAt,
+  
   _Header
 }
 ```
@@ -145,13 +157,19 @@ define view entity ZC_Stock_Item
   @UI.lineItem: [ { position: 40 } ]
   StorageLoc,
   
-  @UI.lineItem: [ { position: 50, criticalities: [{ value: 'LOW', criticality: #NEGATIVE }] } ]
+  @UI.lineItem: [ { position: 50, criticality: 'RiskCriticality' } ]
   QtyOnHand,
   
   Uom,
   
-  @UI.lineItem: [ { position: 60 } ]
+  @UI.lineItem: [ { position: 60, criticality: 'RiskCriticality' } ]
   RiskFlag,
+  
+  @UI.hidden: true
+  case RiskFlag
+    when 'LOW' then 1 -- Negative (Red)
+    else 3            -- Positive (Green)
+  end as RiskCriticality,
   
   ItemValue,
   Currency,
