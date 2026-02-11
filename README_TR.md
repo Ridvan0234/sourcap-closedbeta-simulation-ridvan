@@ -29,6 +29,15 @@ Fonksiyonel Dökümanı kullanarak şunları oluşturun:
 *   **Behavior Definition**: Read-only (veya standart).
 *   **Service**: Service Definition ve Binding.
 
+👉 **Adım Adım Rehber mi Arıyorsun?**
+Uygulamayı yapmana yardımcı olacak kapsamlı bir **ABAP Rehberli Proje** hazırladık. Aşağıdaki dökümanları takip ederek ilerleyebilirsin:
+*   [Adım 1: Veri Modeli](./docs/abap-guided-project/01-level-1-data-model.md)
+*   [Adım 2: Veri Oluşturma (Data Generation)](./docs/abap-guided-project/02-level-2-data-generation.md)
+*   [Adım 3: CDS View'lar](./docs/abap-guided-project/03-level-3-cds-views.md)
+*   [Adım 4: Servis Yayını (Service Exposure)](./docs/abap-guided-project/04-level-4-service-exposure.md)
+
+Detaylar için [docs/abap-guided-project](./docs/abap-guided-project) klasörüne bakabilirsin.
+
 ### 4. 📤 SourcAP Üzerinden Teslim
 Kodlarınızı kendi private (gizli) GitHub reponuza yükledikten sonra:
 1.  **SourcAP Platformuna** gidin.

@@ -29,6 +29,15 @@ Using the Functional Spec, build the following:
 *   **Behavior Definition**: Read-only (or standard).
 *   **Service**: Service Definition and Binding.
 
+👉 **Need step-by-step guidance?**
+We have prepared a comprehensive **ABAP Guided Project** to help you with the implementation. You can follow these documents to build your solution:
+*   [Step 1: Data Model](./docs/abap-guided-project/01-level-1-data-model.md)
+*   [Step 2: Data Generation](./docs/abap-guided-project/02-level-2-data-generation.md)
+*   [Step 3: CDS Views](./docs/abap-guided-project/03-level-3-cds-views.md)
+*   [Step 4: Service Exposure](./docs/abap-guided-project/04-level-4-service-exposure.md)
+
+Check the [docs/abap-guided-project](./docs/abap-guided-project) folder for full details.
+
 ### 4. 📤 How to Submit (SourcAP)
 Once you have pushed your code to your private GitHub repo:
 1.  Go to the **SourcAP Platform**.
