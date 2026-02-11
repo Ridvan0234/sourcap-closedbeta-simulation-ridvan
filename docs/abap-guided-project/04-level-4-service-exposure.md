@@ -34,6 +34,15 @@ define service ZUI_STOCK_SRV {
 ---
 **Congratulations!** You have built a full ABAP RAP application from scratch.
 
-### What's Next?
--   Implement the logic to calculate `RiskFlag` dynamically in a Determination.
--   Add a "Generate Snapshot" button using a UI Action.
+### 🏆 Bonus Challenge: Earn Extra Points!
+
+The **Generate Snapshot** button and **Dynamic Risk Calculation** are intentionally missing from this guide. To earn extra poinst from your mentor, you need to research and implement these features yourself!
+
+Use the following AI prompt to get started:
+
+> "I have a RAP BO with a Header and Item entity. I want to:
+>
+> 1.  Implement a **Determination** on Modify for the Item entity to automatically set `RiskFlag = 'LOW'` if `QtyOnHand < ReorderPoint`.
+> 2.  Add a **UI Action** called 'Generate Snapshot' to the Header entity that triggers an ABAP method to create data.
+>
+> Can you show me the steps and code snippets for these two features?"
