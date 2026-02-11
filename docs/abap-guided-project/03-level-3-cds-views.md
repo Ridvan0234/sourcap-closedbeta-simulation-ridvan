@@ -5,7 +5,7 @@ Now that we have data, we need to model it for the UI using Core Data Services (
 ## Step 1: Interface Views
 
 ### 1.1 Header Interface (`ZI_Stock_Header`)
-1.  Right-click `ZTOFFY_STOCK` -> **New** -> **Data Definition**.
+1.  Right-click `ZSCP_BETA_STOCK_YOURNAME` -> **New** -> **Data Definition**.
 2.  **Name**: `ZI_Stock_Header`
 3.  **Description**: Stock Header Interface
 4.  **Template**: Define View Entity
@@ -44,7 +44,7 @@ define view entity ZI_Stock_Header
 ```
 
 ### 1.2 Item Interface (`ZI_Stock_Item`)
-1.  Right-click `ZTOFFY_STOCK` -> **New** -> **Data Definition**.
+1.  Right-click `ZSCP_BETA_STOCK_YOURNAME` -> **New** -> **Data Definition**.
 2.  **Name**: `ZI_Stock_Item`
 3.  **Description**: Stock Item Interface
 4.  **Template**: Define View Entity

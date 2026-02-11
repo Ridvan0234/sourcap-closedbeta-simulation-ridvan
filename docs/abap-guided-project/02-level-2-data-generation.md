@@ -3,7 +3,7 @@
 In this level, we will create an ABAP class to generate mock data for our tables. Since we don't have a real S/4HANA backend in this environment, this class will simulate the "Snapshot Creation" process.
 
 ## Step 1: Create an ABAP Class
-1.  Right-click on package `ZTOFFY_STOCK` -> **New** -> **ABAP Class**.
+1.  Right-click on package `ZSCP_BETA_STOCK_YOURNAME` -> **New** -> **ABAP Class**.
 2.  **Name**: `ZCL_STOCK_GENERATOR`
 3.  **Description**: Generate Mock Stock Data
 4.  **Interfaces**: `if_oo_adt_classrun` (Simulate console runner)

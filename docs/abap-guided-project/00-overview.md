@@ -22,7 +22,7 @@ We will use the **ABAP RESTful Application Programming Model (RAP)**.
 -   A valid generic Development Package (e.g., `ZTOFFY_STOCK` or `$TMP`).
 
 ## conventions
--   **Package**: `ZTOFFY_STOCK` (or your local package).
+-   **Package**: `ZSCP_BETA_STOCK_YOURNAME` (Replace `YOURNAME` with your name/initials).
 -   **Prefix**: `ZTF_` for tables, `ZI_` for interface views, `ZC_` for consumption views.
 
 ---

@@ -4,8 +4,8 @@ In this level, we will set up the foundation of our application by creating the 
 
 ## Step 1: Create a Package
 1.  Right-click on **ZLOCAL** (or your preferred Super Package) -> **New** -> **ABAP Package**.
-2.  **Name**: `ZTOFFY_STOCK`
-3.  **Description**: Toffy Stick Snapshot Mock
+2.  **Name**: `ZSCP_BETA_STOCK_YOURNAME`
+3.  **Description**: Stock Snapshot Mock Application
 4.  **Software Component**: `HOME` (or `LOCAL` for `$TMP`)
 5.  **Transport Layer**: (Leave empty if `$TMP`)
 6.  Click **Finish**.
@@ -17,7 +17,7 @@ For simplicity, we will use standard domains or built-in types in our table defi
 We need two tables: one for the Snapshot Header and one for the Items. We will use modern ABAP types and include standard RAP administrative fields.
 
 ### 3.1 Header Table (`ZTF_STOCK_HDR`)
-1.  Right-click on your new package `ZTOFFY_STOCK` -> **New** -> **Other ABAP Repository Object** -> **Database Table**.
+1.  Right-click on your new package `ZSCP_BETA_STOCK_YOURNAME` -> **New** -> **Other ABAP Repository Object** -> **Database Table**.
 2.  **Name**: `ZTF_STOCK_HDR`
 3.  **Description**: Stock Snapshot Header
 4.  Click **Finish**.
@@ -51,7 +51,7 @@ define table ztf_stock_hdr {
 6.  **Activate** (Ctrl+F3).
 
 ### 3.2 Item Table (`ZTF_STOCK_ITM`)
-1.  Right-click on package `ZTOFFY_STOCK` -> **New** -> **Other ABAP Repository Object** -> **Database Table**.
+1.  Right-click on package `ZSCP_BETA_STOCK_YOURNAME` -> **New** -> **Other ABAP Repository Object** -> **Database Table**.
 2.  **Name**: `ZTF_STOCK_ITM`
 3.  **Description**: Stock Snapshot Item
 4.  Click **Finish**.

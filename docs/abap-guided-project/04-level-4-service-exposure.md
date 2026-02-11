@@ -3,7 +3,7 @@
 The final step is to expose our Consumptions Views as an **OData Service** so a Fiori app can consume them.
 
 ## Step 1: Service Definition
-1.  Right-click `ZTOFFY_STOCK` -> **New** -> **Other** -> **Service Definition**.
+1.  Right-click `ZSCP_BETA_STOCK_YOURNAME` -> **New** -> **Other** -> **Service Definition**.
 2.  **Name**: `ZUI_STOCK_SRV`
 3.  **Description**: Stock Service Definition
 4.  **Copy & Paste**:
