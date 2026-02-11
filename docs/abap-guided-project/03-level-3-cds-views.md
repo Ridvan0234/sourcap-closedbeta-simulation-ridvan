@@ -73,6 +73,11 @@ define view entity ZI_Stock_Item
   item_value        as ItemValue,
   currency          as Currency,
   
+  case risk_flag
+    when 'LOW' then 1 -- Negative (Red)
+    else 3            -- Positive (Green)
+  end               as RiskCriticality,
+  
   /* Admin Fields */
   @Semantics.systemDateTime.createdAt: true
   created_at            as CreatedAt,
@@ -166,10 +171,7 @@ define view entity ZC_Stock_Item
   RiskFlag,
   
   @UI.hidden: true
-  case RiskFlag
-    when 'LOW' then 1 -- Negative (Red)
-    else 3            -- Positive (Green)
-  end as RiskCriticality,
+  RiskCriticality,
   
   ItemValue,
   Currency,
